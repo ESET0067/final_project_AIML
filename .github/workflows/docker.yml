@@ -15,9 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Debug Docker username (optional)
-      - name: Debug Docker username
-        run: echo "Docker username is: ${{ secrets.DOCKER_USERNAME1 }}"
+      # # Step 2: Debug Docker username (optional)
+      # - name: Debug Docker username
+      #   run: echo "Docker username is: ${{ secrets.DOCKER_USERNAME1 }}"
 
       # Step 3: Log in to Docker Hub
       - name: Log in to Docker Hub
