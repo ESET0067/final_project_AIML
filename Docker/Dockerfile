@@ -1,14 +1,10 @@
-# Use Python as the base image
-FROM python:3.10
+FROM python:3.10-slim
 
-# Set working directory inside the container
 WORKDIR /app
 
-# Copy everything from your repo into the container
-COPY . .
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies (if any)
-RUN pip install -r requirements.txt || true
+COPY main.py main.py
 
-# Run your main Python file when the container starts
 CMD ["python", "main.py"]
